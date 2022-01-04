@@ -17,24 +17,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/karyawan', 'KaryawanController@index');
-Route::get('/karyawan/fprint', 'KaryawanController@fprint');
-Route::get('/karyawan/tambah','KaryawanController@tambah');
-Route::get('/karyawan/edit/{id}','KaryawanController@edit');
-Route::get('/karyawan/hapus/{id}','KaryawanController@hapus');
-Route::post('/karyawan/store','KaryawanController@store');
-Route::post('/karyawan/update','KaryawanController@update');
+Route::get('/home', 'HomeController@index');
+
+Route::get('/employee', 'EmployeeController@index');
+Route::get('/employee/fprint', 'EmployeeController@fprint');
+Route::get('/employee/create','EmployeeController@create');
+Route::get('/employee/search','EmployeeController@search');
+Route::get('/employee/edit/{id}','EmployeeController@edit');
+Route::get('/employee/destroy/{id}','EmployeeController@destroy');
+Route::post('/employee/store','EmployeeController@store');
+Route::post('/employee/update','EmployeeController@update');
 
 Route::get('/pegawai', 'PegawaiController@index');
-Route::get('/pegawai/tambah','PegawaiController@tambah');
+Route::get('/pegawai/create','PegawaiController@create');
 Route::get('/pegawai/edit/{id}','PegawaiController@edit');
-Route::get('/pegawai/hapus/{id}','PegawaiController@hapus');
+Route::get('/pegawai/search','PegawaiController@search');
+Route::get('/pegawai/destroy/{id}','PegawaiController@destroy');
 Route::post('/pegawai/store','PegawaiController@store');
 Route::post('/pegawai/update','PegawaiController@update');
-
-Route::get('/pengguna', 'PenggunaController@index');
-Route::get('/article', 'ArticleController@index');
-Route::get('/anggota', 'DenmasgieController@index');
 
 Route::get('/upload', 'UploadController@upload');
 Route::post('/upload/proses', 'UploadController@proses_upload');
@@ -45,6 +45,14 @@ Route::get('/notifikasi/sukses','NotificationController@sukses');
 Route::get('/notifikasi/peringatan','NotificationController@peringatan');
 Route::get('/notifikasi/gagal','NotificationController@gagal');
 
-Route::get('/siswa', 'SiswaController@index');
-Route::get('/siswa/export_excel', 'SiswaController@export_excel');
-Route::post('/siswa/import_excel', 'SiswaController@import_excel');
+Route::get('/kontol', 'KontolController@input');
+Route::post('/kontol/proses', 'KontolController@proses');
+
+Route::get('/pengguna', 'PenggunaController@index');
+Route::get('/article', 'ArticleController@index');
+Route::get('/member', 'MemberController@index');
+
+Route::get('/student', 'StudentController@index');
+Route::get('/student/export_excel', 'StudentController@export_excel');
+Route::get('/student/import_excel', 'StudentController@import_excel');
+

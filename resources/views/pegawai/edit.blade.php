@@ -3,9 +3,23 @@
 @section('title', 'Edit Pegawai')
 
 @section('content')
-<div class="jumbotron mt-5">
-	<h2 class="text-center">Edit Pegawai</h2>
+<!-- Content Header (Page header) -->
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0">Edit Pegawai</h1>
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active">Edit Pegawai</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
 </div>
+<!-- /.content-header -->
 
 <div class="container my-3">
 	<div class="card">

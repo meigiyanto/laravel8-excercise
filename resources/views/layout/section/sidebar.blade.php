@@ -1,93 +1,133 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-sm-start fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand order-1 order-lg-0 ml-lg-0 ml-2 mr-auto" href="#">Catatan Kecilku</a>
-    <button class="navbar-toggler align-self-start" type="button">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+      <img src="{{ asset('/assets//img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">AdminLTE 3</span>
+    </a>
 
-    <div class="collapse navbar-collapse bg-dark p-3 p-lg-0 mt-5 mt-lg-0 d-flex flex-column flex-lg-row flex-xl-row justify-content-lg-end mobileMenu" id="navbarSupportedContent">
-      <ul class="navbar-nav align-self-stretch">
-        <li class="nav-item active">
-          <a class="nav-link" href="{{ url('/') }}"
-            >Home <span class="sr-only">(current)</span></a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="{{ url('/pegawai') }}"
-            tabindex="-1"
-            aria-disabled="true"
-            >CRUD</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="{{ url('/upload') }}"
-            tabindex="-2"
-            aria-disabled="true"
-            >Upload Image</a
-          >
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Relation
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{ url('/pengguna') }}">One to One</a>
-            <a class="dropdown-item" href="{{ url('/article') }}">One to Many</a>
-            <a class="dropdown-item" href="{{ url('/anggota') }}">Many to Many</a>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="{{ asset('/assets//img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Alexander Pierce</a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
           </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Reporting
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{ url('/karyawan') }}">Export to PDF</a>
-            <a class="dropdown-item" href="{{ url('/siswa') }}">Export to Excel/Import from Excel</a>
-          </div>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0 align-self-stretch">
-        <input
-          class="form-control form-control-sm mr-sm-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-sm btn-success my-2 my-sm-0" type="submit">
-          Search
-        </button>
-      </form>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+         
+          <li class="nav-item menu-close">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                CRUD Basic
+                <i class="right fas fa-angle-right"></i>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ url('/employee') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Employee</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('/pegawai') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pegawai</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item menu-close">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-newspaper"></i>
+              <p>
+                Reporting
+                <i class="right fas fa-angle-right"></i>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ url('/employee/fprint') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Print PDF</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('/student') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Export & Import Excel</p>
+                </a>
+              </li>
+            </ul>
+            
+          </li>
+          
+          <li class="nav-item menu-close">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-link"></i>
+              <p>
+                Relation
+                <i class="right fas fa-angle-right"></i>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ url('/pengguna') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>One to One Relation</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('/article') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>One to Many Relation</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('/member') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Many to Many Relation</p>
+                </a>
+              </li>
+            </ul>
+
+            <li class="nav-item">
+              <a href="{{ url('/upload') }}" class="nav-link">
+                <i class="nav-icon fas fa-upload"></i>
+                <p>
+                  Upload
+                </p>
+              </a>
+            </li>
+            
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
     </div>
-  </div>
-</nav>
-<div class="overlay"></div>
-<!--
-<div class="container py-4 my-5">
-  <div class="row">
-    <div class="col-md-12">
-      <h1>Left Sidebar</h1>
-      <p>Switch the Repo Branch for the Right Side Bar</p>
-    </div>
-  </div>
-</div>
--->
+    <!-- /.sidebar -->
+  </aside>

@@ -1,11 +1,25 @@
 @extends('layout.main')
 
-@section('title', 'Edit Karyawan')
+@section('title', 'Edit Employee')
 
 @section('content')
-<div class="jumbotron mt-5">
-	<h2 class="text-center">Edit Karyawan</h2>
+<!-- Content Header (Page header) -->
+<div class="content-header">
+	<div class="container-fluid">
+	<div class="row mb-2">
+		<div class="col-sm-6">
+		<h1 class="m-0">Edit Employee</h1>
+		</div><!-- /.col -->
+		<div class="col-sm-6">
+		<ol class="breadcrumb float-sm-right">
+			<li class="breadcrumb-item"><a href="#">Home</a></li>
+			<li class="breadcrumb-item active">Edit Employee</li>
+		</ol>
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+	</div><!-- /.container-fluid -->
 </div>
+<!-- /.content-header -->
 
 <div class="container-fluid my-3">
 	<div class="card">
@@ -21,28 +35,32 @@
 			</div>
 			@endif
 			
-			@foreach($karyawan as $p)
-			<form action="/karyawan/update" method="post">
+			@foreach($employee as $e)
+			<form action="/employee/update" method="post">
 				{{ csrf_field() }}
-				<input type="hidden" name="id" value="{{ $p->karyawan_id }}"> <br/>
+				<input type="hidden" name="id" value="{{ $e->Employee_id }}"> <br/>
 				<div class="form-group">
 					<lable>Nama</lable>
-					<input type="text" required="required" name="nama" value="{{ $p->karyawan_nama }}" class="form-control">
+					<input type="text" required="required" name="nama" value="{{ $e->nama }}" class="form-control">
 				</div>
 				<div class="form-group">
-					<label>Jabatan</label>
-					<input type="text" required="required" name="jabatan" value="{{ $p->karyawan_jabatan }}" class="form-control">
+					<label>Pekerjaan</label>
+					<input type="text" required="required" name="pekerjaan" value="{{ $e->pekerjaan }}" class="form-control">
 				</div>
 				<div class="form-group">
-					<label>Umur</label>
-					<input type="number" required="required" name="umur" value="{{ $p->karyawan_umur }}" class="form-control">
+					<label>Email</label>
+					<input type="email" required="required" name="email" value="{{ $e->email }}" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Telepon</label>
+					<input type="phone" required="required" name="telepon" value="{{ $e->telepon }}" class="form-control">
 				</div>
 				<div class="form-group">
 					<label>Alamat</label>
-					<textarea required="required" name="alamat" class="form-control">{{ $p->karyawan_alamat }}</textarea>
+					<textarea required="required" name="alamat" class="form-control">{{ $e->alamat }}</textarea>
 				</div>
-				<button type="button" class="btn btn-primary">Simpan</button>
-				<a class="btn btn-sm btn-secondary float-right" href="/karyawan"> Kembali</a>
+				<button type="button" class="btn btn-sm btn-primary">Simpan</button>
+				<a class="btn btn-sm btn-secondary float-right" href="/employee"> Kembali</a>
 			</form>
 			@endforeach
 		</div>

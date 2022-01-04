@@ -1,15 +1,29 @@
 @extends('layout.main')
 
-@section('title', 'Tambah Karyawan')
+@section('title', 'Create New Employee')
 
 @section('content')
-<div class="jumbotron mt-5">
-	<h2 class="text-center">Tambah Data Karywan</h2>
+<!-- Content Header (Page header) -->
+<div class="content-header">
+	<div class="container-fluid">
+	<div class="row mb-2">
+		<div class="col-sm-6">
+		<h1 class="m-0">Create New Employee</h1>
+		</div><!-- /.col -->
+		<div class="col-sm-6">
+		<ol class="breadcrumb float-sm-right">
+			<li class="breadcrumb-item"><a href="#">Home</a></li>
+			<li class="breadcrumb-item active">Create New Employee</li>
+		</ol>
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+	</div><!-- /.container-fluid -->
 </div>
+<!-- /.content-header -->
 
 <div class="container-fluid">
 	<div class="card">
-		<form action="/karyawan/store" method="post">
+		<form action="/employee/store" method="post">
 			{{ csrf_field() }}
 	
 			<div class="card-body">
@@ -42,7 +56,7 @@
 			</div>
 			<div class="card-footer">
 				<button type="submit" class="btn btn-sm btn-primary">Simpan</button>
-				<a class="btn btn-sm btn-secondary float-right" href="/karyawan"> Kembali</a>
+				<a class="btn btn-sm btn-secondary float-right" href="/employee"> Kembali</a>
 			</div>
 		</form>
 	</div>

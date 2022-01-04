@@ -3,24 +3,33 @@
 <head>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
+	<meta name="description" content="">
+  <meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>My Laravel App</title>
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="{{ asset('/assets/css/sidebar.css') }}">
+	<!-- Font Awesome Icons -->
+	<link rel="stylesheet" href="{{ asset('/assets/plugins/fontawesome-free/css/all.min.css') }}">
+  <!-- AdminLTE 3 CSS -->
+	<link rel="stylesheet" href="{{ asset('/assets/css/adminlte.min.css') }}">
+
+  <!-- jQuery -->
+  <script src="{{ asset('/assets/plugins/jquery/jquery.min.js') }}"></script>
+  <!-- Bootstrap 4 -->
+  <script src="{{ asset('/assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <!-- AdminLTE App -->
+  <script src="{{ asset('/assets/js/adminlte.min.js') }}"></script>
 </head>
-<body>
-    {{-- @include('layout.section.navbar') --}}
-    
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">    
+    @include('layout.section.navbar')
+
     @include('layout.section.sidebar')
-    
-	@yield('content')
-    
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<script src="{{ asset('/assets/js/sidebar.js') }}"></script>
+      
+    <div class="content-wrapper">
+      @yield('content')
+    </div>
+    @include('layout.section.footer')
+
+</div>
 </body>
 </html>

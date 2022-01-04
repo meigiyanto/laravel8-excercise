@@ -10,8 +10,8 @@ class Pengguna extends Model
     use HasFactory;
     protected $table = 'pengguna';
     
-    public function telepon()
+    public function phone()
     {
-	    return $this->hasOne('App\Models\Telepon');
+	    return $this->hasOne('App\Models\Phone');
     }
 }

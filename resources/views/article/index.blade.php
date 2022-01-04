@@ -3,15 +3,31 @@
 @section('title', 'Article')
 
 @section('content')
-<div class="jumbotron mt-5">
-	<h2 class="text-center my-4">Eloquent One To Many Relationship</h2>
-</div>
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Article</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Article</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
 
 <div class="container-fluid">
 	<div class="card">
+		
 		<div class="card-body">
-
-			<table class="table table-bordered table-striped">
+			<h3 class="text-center">Eloquent One To Many Relationship</h3>
+			<table class="mt-3 table table-bordered table-striped">
 				<thead>
 					<tr>
 						<th>Judul Article</th>

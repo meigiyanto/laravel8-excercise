@@ -17,22 +17,22 @@ class PegawaiController extends Controller
 		return view('pegawai/index',['pegawai' => $pegawai]);
 	}
 
-	public function cari(Request $request)
+	public function search(Request $request)
 	{
-		$cari    = $request->cari;
+		$temukan    = $request->search;
 		// $pegawai = DB::table('pegawai')
-		//			->where('pegawai_nama','like',"%".$cari."%")
+		//			->where('pegawai_nama','like',"%".$search."%")
 		//			->paginate();
 		
 		/* Eloquent */
-		$pegawai = Pegawai::where('pegawai_nama','like','%'.$cari.'%')->paginate();
+		$pegawai = Pegawai::where('pegawai_nama','like','%'.$temukan.'%')->paginate();
 
 		return view('pegawai/index',['pegawai' => $pegawai]);
 	}
 	
-	public function tambah()
+	public function create()
 	{
-		return view('pegawai/tambah');
+		return view('pegawai/create');
 	}
 
 	public function store(Request $request)
@@ -99,7 +99,7 @@ class PegawaiController extends Controller
 		return redirect('/pegawai');
 	}
 
-	public function hapus($id)
+	public function destroy($id)
 	{
 		// DB::table('pegawai')->where('pegawai_id',$id)->delete();
 		/* Eloquent */

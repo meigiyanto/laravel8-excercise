@@ -3,9 +3,23 @@
 @section('title', 'Upload File')
 
 @section('content')
-<div class="jumbotron mt-5">
-	<h2 class="text-center mx-auto">Upload File</h2>
+<!-- Content Header (Page header) -->
+<div class="content-header">
+	<div class="container-fluid">
+	<div class="row mb-2">
+		<div class="col-sm-6">
+		<h1 class="m-0">Upload File</h1>
+		</div><!-- /.col -->
+		<div class="col-sm-6">
+		<ol class="breadcrumb float-sm-right">
+			<li class="breadcrumb-item"><a href="#">Home</a></li>
+			<li class="breadcrumb-item active">Upload File</li>
+		</ol>
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+	</div><!-- /.container-fluid -->
 </div>
+<!-- /.content-header -->
 
 <div class="container-fluid">
 	<div class="card mb-3">
@@ -35,7 +49,7 @@
 							<textarea class="form-control" name="keterangan"></textarea>
 						</div>
 		
-						<input type="submit" value="Upload" class="btn btn-primary">
+						<input type="submit" value="Upload" class="btn btn-sm btn-primary">
 					</form>
 				</div>
 			</div>
@@ -54,11 +68,11 @@
 					</tr>
 				</thead>
 				<tbody>
-				@foreach($gambar as $g)
+				@foreach($picture as $p)
 					<tr>
-						<td><img width="150px" src="{{ url('assets/images/'.$g->file) }}"></td>
-						<td class="align-middle">{{$g->keterangan}}</td>
-						<td class="align-middle"><a class="btn btn-danger" href="/upload/hapus/{{ $g->id }}">HAPUS</a></td>
+						<td><img width="150px" src="{{ url('assets/images/'.$p->file) }}"></td>
+						<td class="align-middle">{{$p->keterangan}}</td>
+						<td class="align-middle"><a class="btn btn-sm btn-danger" href="/upload/hapus/{{ $p->id }}">HAPUS</a></td>
 					</tr>
 				@endforeach
 				</tbody>

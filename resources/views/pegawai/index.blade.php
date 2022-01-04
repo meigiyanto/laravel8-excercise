@@ -3,19 +3,33 @@
 @section('title', 'Pegawai')
 
 @section('content')
-<div class="jumbotron mt-5">
-	<h2 class="text-center">Data Pegawai</h1>
+<!-- Content Header (Page header) -->
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0">Pegawai</h1>
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active">Pegawai</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
 </div>
+<!-- /.content-header -->
 
 <div class="container-fluid">
 	<div class="card">
 		<div class="card-body">
 
-			<a class="mb-3 btn btn-sm btn-secondary" href="/pegawai/tambah"> + Tambah Pegawai Baru</a>
+			<a class="mb-3 btn btn-sm btn-secondary" href="/pegawai/create"> + Tambah Pegawai Baru</a>
 			
-			<form action="/pegawai/cari" method="GET">
+			<form action="/pegawai/search" method="GET">
 			  <div class="form-group">
-				<input type="text" class="form-control" name="cari" placeholder="Cari Pegawai .." value="{{ old('cari') }}">
+				<input type="text" class="form-control" name="search" placeholder="Cari Pegawai .." value="{{ old('search') }}">
 				<button type="submit" class="mt-3 btn btn-sm btn-primary">Search</button>
 			  </div>
 			</form>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Gambar;
+use App\Models\Picture;
 use File;
 
 class UploadController extends Controller
@@ -11,8 +11,8 @@ class UploadController extends Controller
     public function upload() 
     {
 		// return view('upload/index');
-		$gambar = Gambar::get();
-		return view('upload/index',['gambar' => $gambar]);
+		$picture = Picture::get();
+		return view('upload/index',['picture' => $picture]);
 	}
  
 	public function proses_upload(Request $request) 
@@ -57,7 +57,7 @@ class UploadController extends Controller
 
         // upload file
 		$file->move($tujuan_upload, $file->getClientOriginalName());
-		Gambar::create([
+		Picture::create([
 			'file' 		 => $nama_file,
 			'keterangan' => $request->keterangan,
 		]);
@@ -67,10 +67,10 @@ class UploadController extends Controller
 	
 	public function hapus($id)
 	{
-		$gambar = Gambar::where('id',$id)->first();
-		File::delete('assets/images/'.$gambar->file);
+		$picture = Picture::where('id',$id)->first();
+		File::delete('assets/images/'.$picture->file);
 		
-		Gambar::where('id',$id)->delete();
+		Picture::where('id',$id)->delete();
 		return redirect()->back();
 	}
 }
