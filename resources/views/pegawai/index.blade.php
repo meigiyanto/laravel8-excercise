@@ -69,9 +69,9 @@
 				</table>
 			</div>
 			
-			<p class="mt-2">Halaman : {{ $pegawai->currentPage }} Jumlah Data : {{ $pegawai->total() }} Data Per Halaman : {{ $pegawai->perPage() }}</p>
+			<p class="mt-3 float-right">Halaman : {{ $pegawai->currentPage() }} Jumlah Data : {{ $pegawai->total() }} Data Per Halaman : {{ $pegawai->perPage() }}</p>
 			
-			{{ $pegawai->links() }}
+			<p class="mt-2">{{ $pegawai->links() }}</p>
 		</div>
 	</div>
 </div>
