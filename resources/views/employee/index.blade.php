@@ -29,10 +29,10 @@
 				<a href="/employee/fprint" class="mb-3 btn btn-sm btn-primary" target="_blank">Print PDF</a>
 				
 				<form action="/employee/search" method="GET">
-				<div class="form-group">
-					<input type="text" class="form-control" name="search" placeholder="Search employee .." value="{{ old('search') }}">
-					<button type="submit" class="mt-3 btn btn-sm btn-primary">Search</button>
-				</div>
+					<div class="form-group">
+						<input type="text" class="form-control" name="search" placeholder="Search employee .." value="{{ old('search') }}">
+						<button type="submit" class="mt-3 btn btn-sm btn-primary">Search</button>
+					</div>
 				</form>
 
 				<div class="table table-responsive">
@@ -69,9 +69,7 @@
 					</table>
 				</div>
 				
-				<p class="mt-2">Halaman : {{ $employee->currentPage() }}
-				<br>Jumlah Data : {{ $employee->total() }}
-				<br>Data Per Halaman : {{ $employee->perPage() }}</p>
+				<p class="mt-2">Halaman : {{ $employee->currentPage() }} Jumlah Data : {{ $employee->total() }} Data Per Halaman : {{ $employee->perPage() }}</p>
 				
 				{{ $employee->links() }}
 			</div>

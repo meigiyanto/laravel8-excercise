@@ -69,8 +69,7 @@
 				</table>
 			</div>
 			
-			<p class="mt-2">Halaman : {{ $pegawai->currentPage() }} <br>Jumlah Data : {{ $pegawai->total() }}
-			<br>Data Per Halaman : {{ $pegawai->perPage() }}</p>
+			<p class="mt-2">Halaman : {{ $pegawai->currentPage }} Jumlah Data : {{ $pegawai->total() }} Data Per Halaman : {{ $pegawai->perPage() }}</p>
 			
 			{{ $pegawai->links() }}
 		</div>
