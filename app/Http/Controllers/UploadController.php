@@ -10,17 +10,16 @@ class UploadController extends Controller
 {
     public function upload() 
     {
-		// return view('upload/index');
-		$picture = Picture::get();
+		$picture = Picture::paginate($perPage = 5, $olumns = ['*'], $pageNum = 'picture');
 		return view('upload/index',['picture' => $picture]);
 	}
  
 	public function proses_upload(Request $request) 
 	{
-		$this->validate($request, [
-			'file' 		 => 'required',
-			'keterangan' => 'required',
-		]);
+		// $this->validate($request, [
+		// 	'file' 		 => 'required',
+		// 	'keterangan' => 'required',
+		// ]);
 
 		/**
 		*	menyimpan data file yang diupload ke variabel $file
@@ -50,26 +49,48 @@ class UploadController extends Controller
 		*/
 		
 		// menyimpan data file yang diupload ke variabel $file
-		$file      = $request->file('file');		
-		$nama_file = $file->getClientOriginalName();
+		// $file      = $request->file('file');		
+		// $nama_file = $file->getClientOriginalName();
 
 		// isi dengan nama folder tempat kemana file diupload
-		$tujuan_upload = 'assets/images';
+		// $tujuan_upload = 'assets/images';
 
         // upload file
-		$file->move($tujuan_upload, $file->getClientOriginalName());
-		Picture::create([
-			'file' 		 => $nama_file,
-			'keterangan' => $request->keterangan,
-		]);
+		// $file->move($tujuan_upload, $file->getClientOriginalName());
+		// Picture::create([
+		// 	'file' 		 => $nama_file,
+		// 	'keterangan' => $request->keterangan,
+		// ]);
 		
+		// return redirect()->back();
+
+		$request->validate([
+			'images'   => 'required',
+			'images.*' => 'mimes:jpeg,jfif,jpg,png,gif,csv,txt,pdf|max:2048',
+			'keterangan'  => 'required'
+		]);
+
+		$images = $request->file('images');
+
+		foreach($images as $image) {
+			$name = $image->getClientOriginalName();
+			// $path = $image->storeAs('uploads', $name, 'public');
+			$path = $image->move('assets/images', $image->getClientOriginalName());
+
+			Picture::create([
+				'name' 		 => $name,
+				'keterangan' => $request->keterangan,
+				'image_path' => $path
+			]);
+		}
+
 		return redirect()->back();
 	}
 	
 	public function hapus($id)
 	{
 		$picture = Picture::where('id',$id)->first();
-		File::delete('assets/images/'.$picture->file);
+		File::delete('assets/images/'.$picture->name);
 		
 		Picture::where('id',$id)->delete();
 		return redirect()->back();

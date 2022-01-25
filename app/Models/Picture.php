@@ -10,5 +10,5 @@ class Picture extends Model
     use HasFactory;
     protected $table = "gambar";
     
-    protected $fillable = ['file','keterangan'];
+    protected $fillable = ['name', 'image_path', 'keterangan'];
 }
