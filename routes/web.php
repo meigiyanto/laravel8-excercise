@@ -34,7 +34,7 @@ Route::get('/pegawai/edit/{id}','PegawaiController@edit');
 Route::get('/pegawai/search','PegawaiController@search');
 Route::get('/pegawai/destroy/{id}','PegawaiController@destroy');
 Route::post('/pegawai/store','PegawaiController@store');
-Route::post('/pegawai/update','PegawaiController@update');
+Route::post('/pegawai/update/{id}','PegawaiController@update');
 
 Route::get('/upload', 'UploadController@upload');
 Route::post('/upload/proses', 'UploadController@proses_upload');

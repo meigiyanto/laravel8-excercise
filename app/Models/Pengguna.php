@@ -9,9 +9,9 @@ class Pengguna extends Model
 {
     use HasFactory;
     protected $table = 'pengguna';
-    
+
     public function phone()
     {
-	    return $this->hasOne('App\Models\Phone');
+	    return $this->hasOne('App\Models\Telepon');
     }
 }

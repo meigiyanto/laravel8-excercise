@@ -12,7 +12,7 @@ class CreatePegawaisTable extends Migration
      * @return void
      */
     public function up()
-    {        
+    {
         Schema::create('pegawais', function (Blueprint $table) {
 	        $table->increments('id');
 	        $table->string('nama');

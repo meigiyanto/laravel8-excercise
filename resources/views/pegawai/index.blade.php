@@ -26,14 +26,12 @@
 		<div class="card-body">
 
 			<a class="mb-3 btn btn-sm btn-secondary" href="/pegawai/create"> + Tambah Pegawai Baru</a>
-			
 			<form action="/pegawai/search" method="GET">
 			  <div class="form-group">
 				<input type="text" class="form-control" name="search" placeholder="Cari Pegawai .." value="{{ old('search') }}">
 				<button type="submit" class="mt-3 btn btn-sm btn-primary">Search</button>
 			  </div>
 			</form>
-			
 
 			<div class="table table-responsive">
 				<table class="table table-striped table-bordered text-nowrap" style="width: 100%">
@@ -71,9 +69,7 @@
 				</table>
 			</div>
 			
-			<p><span>Halaman : {{ $pegawai->currentPage() }}</span>
-			<span>Jumlah Data : {{ $pegawai->total() }}</span>
-			<span>Data Per Halaman : {{ $pegawai->perPage() }}</span></p>
+			<p class="mt-2">Halaman : {{ $pegawai->currentPage() }} <br>Jumlah Data : {{ $pegawai->total() }}<br>Data Per Halaman : {{ $pegawai->perPage() }}</p>
 			
 			{{ $pegawai->links() }}
 		</div>

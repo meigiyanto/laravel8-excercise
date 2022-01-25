@@ -8,7 +8,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Article</h1>
+            <h1 class="m-0">Article (One to Many Relationship)</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -24,9 +24,7 @@
 
 <div class="container-fluid">
 	<div class="card">
-		
 		<div class="card-body">
-			<h3 class="text-center">Eloquent One To Many Relationship</h3>
 			<table class="mt-3 table table-bordered table-striped">
 				<thead>
 					<tr>
