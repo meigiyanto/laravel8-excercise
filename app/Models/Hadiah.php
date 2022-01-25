@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Reward extends Model
+class Hadiah extends Model
 {
     use HasFactory;
-     protected $table = "rewards";
+     protected $table = "hadiah";
  
     public function member()
     {
-    	return $this->belongsToMany('App\Models\Member');
+    	return $this->belongsToMany('App\Models\Anggota');
     }
 }

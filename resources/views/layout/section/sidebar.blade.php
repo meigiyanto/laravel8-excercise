@@ -108,7 +108,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('/member') }}" class="nav-link">
+                <a href="{{ url('/anggota') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Many to Many Relation</p>
                 </a>

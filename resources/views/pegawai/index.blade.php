@@ -51,15 +51,15 @@
 					@foreach($pegawai as $p)
 					<tr>
 						<td>{{ $i }}</td>
-						<td>{{ $p->pegawai_nama }}</td>
-						<td>{{ $p->pegawai_jabatan }}</td>
-						<td>{{ $p->pegawai_umur }}</td>
-						<td>{{ $p->pegawai_alamat }}</td>
+						<td>{{ $p->nama }}</td>
+						<td>{{ $p->jabatan }}</td>
+						<td>{{ $p->umur }}</td>
+						<td>{{ $p->alamat }}</td>
 						<td>{{ $p->created_at }}</td>
 						<td>{{ $p->updated_at }}</td>
 						<td>
-							<a class="btn btn-sm btn-warning" href="/pegawai/edit/{{ $p->pegawai_id }}">Edit</a>
-							<form class="d-inline-block" action="/pegawai/hapus/{{ $p->pegawai_id }}">
+							<a class="btn btn-sm btn-warning" href="/pegawai/edit/{{ $p->id }}">Edit</a>
+							<form class="d-inline-block" action="/pegawai/hapus/{{ $p->id }}">
 							  {{ csrf_field() }}
 							  <input type="hidden" name="_method" value="DELETE">
 							  <button type="submit" class="btn btn-sm btn-danger" name="_method">Hapus</button>

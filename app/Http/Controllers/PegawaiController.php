@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\DB;
 
 use App\Models\Pegawai;
 
@@ -25,7 +25,7 @@ class PegawaiController extends Controller
 		//			->paginate();
 		
 		/* Eloquent */
-		$pegawai = Pegawai::where('pegawai_nama','like','%'.$temukan.'%')->paginate();
+		$pegawai = Pegawai::where('nama','like','%'.$temukan.'%')->paginate();
 
 		return view('pegawai/index',['pegawai' => $pegawai]);
 	}
@@ -55,10 +55,10 @@ class PegawaiController extends Controller
 		]);
 		
 		Pegawai::create([
-			'pegawai_nama' 		=> $request->nama,
-			'pegawai_jabatan' 	=> $request->jabatan,
-			'pegawai_umur' 		=> $request->umur,
-			'pegawai_alamat' 	=> $request->alamat
+			'nama' 		=> $request->nama,
+			'jabatan' 	=> $request->jabatan,
+			'umur' 		=> $request->umur,
+			'alamat' 	=> $request->alamat
 		]);
 		return redirect('/pegawai');
 	}
@@ -66,7 +66,7 @@ class PegawaiController extends Controller
 	public function edit($id)
 	{
 		// $pegawai = DB::table('pegawai')->where('pegawai_id',$id)->get();
-		$pegawai = Pegawai::where('pegawai_id',$id)->get();
+		$pegawai = Pegawai::where('id',$id)->get();
 		return view('pegawai/edit',['pegawai' => $pegawai]);
 
 	}
@@ -103,7 +103,7 @@ class PegawaiController extends Controller
 	{
 		// DB::table('pegawai')->where('pegawai_id',$id)->delete();
 		/* Eloquent */
-		$pegawai = Pegawai::where('pegawai_id',$id);
+		$pegawai = Pegawai::where('id',$id);
 		$pegawai->delete();
 		return redirect('/pegawai');
 	}

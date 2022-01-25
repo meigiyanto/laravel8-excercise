@@ -1,6 +1,6 @@
 @extends('layout.main')
 
-@section('title', 'Member')
+@section('title', 'anggota')
 
 @section('content')
 <!-- Content Header (Page header) -->
@@ -8,12 +8,12 @@
 	<div class="container-fluid">
 	<div class="row mb-2">
 		<div class="col-sm-6">
-		<h1 class="m-0">Data Member</h1>
+		<h1 class="m-0">Data Anggota</h1>
 		</div><!-- /.col -->
 		<div class="col-sm-6">
 		<ol class="breadcrumb float-sm-right">
 			<li class="breadcrumb-item"><a href="#">Home</a></li>
-			<li class="breadcrumb-item active">Data Member</li>
+			<li class="breadcrumb-item active">Data Anggota</li>
 		</ol>
 		</div><!-- /.col -->
 	</div><!-- /.row -->
@@ -35,19 +35,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($member as $m)
-                        <tr>
-                            <td>{{ $m->nama }}</td>
-                            <td>
-                                <ul>
-                                    @foreach($m->reward as $h)
-                                    <li> {{ $h->nama_reward }} </li>
-                                    @endforeach
-                                </ul>
-                            </td>
-                            <td class="text-center">{{ $m->reward->count() }}</td>
-                        </tr>
-                        @endforeach
+                        @foreach($anggota as $a)
+						<tr>
+							<td>{{ $a->nama }}</td>
+							<td>
+								<ul>
+									@foreach($a->hadiah as $h)
+									<li> {{ $h->nama_hadiah }} </li>
+									@endforeach
+								</ul>
+							</td>
+							<td class="text-center">{{ $a->hadiah->count() }}</td>
+						</tr>
+						@endforeach
                     </tbody>
                 </table>
             

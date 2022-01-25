@@ -41,7 +41,7 @@
 		
 						<div class="form-group">
 							<b>File Gambar</b><br/>
-							<input type="file" name="file">
+							<input type="file" name="file" multiple>
 						</div>
 		
 						<div class="form-group">

@@ -55,7 +55,7 @@
 				</div>
 			</div>
 			<div class="card-footer">
-				<button type="submit" class="btn btn-primary">Simpan</button>
+				<button type="submit" class="btn btn-sm btn-primary">Simpan</button>
 				<a class="btn btn-sm btn-secondary float-right" href="/pegawai"> Kembali</a>
 			</div>
 		</form>

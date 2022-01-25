@@ -50,7 +50,7 @@ Route::post('/kontol/proses', 'KontolController@proses');
 
 Route::get('/pengguna', 'PenggunaController@index');
 Route::get('/article', 'ArticleController@index');
-Route::get('/member', 'MemberController@index');
+Route::get('/anggota', 'AnggotaController@index');
 
 Route::get('/student', 'StudentController@index');
 Route::get('/student/export_excel', 'StudentController@export_excel');
