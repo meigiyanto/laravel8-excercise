@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +18,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::post('login', [AuthController::class, 'signin']);
+Route::post('register', [AuthController::class, 'signup']);
+     
+Route::middleware('auth:sanctum')->group( function () {
+    Route::resource('blogs', BlogController::class);
 });
 
 Route::get('/home', 'HomeController@index');
@@ -48,6 +58,7 @@ Route::get('/notifikasi/gagal','NotificationController@gagal');
 Route::get('/pengguna', 'PenggunaController@index');
 Route::get('/article', 'ArticleController@index');
 Route::get('/anggota', 'AnggotaController@index');
+Route::get('/hash', 'AnggotaController@hash');
 
 Route::get('/student', 'StudentController@index');
 Route::get('/student/export_excel', 'StudentController@export_excel');

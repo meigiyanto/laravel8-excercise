@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <!-- SidebarSearch Form -->
+      
       <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
           <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <!-- Sidebar Menu -->
+      
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
          
@@ -54,6 +54,12 @@
                 <a href="{{ url('/pegawai') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pegawai</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('/contacts') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Contact</p>
                 </a>
               </li>
             </ul>
@@ -127,7 +133,7 @@
           </li>
         </ul>
       </nav>
-      <!-- /.sidebar-menu -->
+      
     </div>
-    <!-- /.sidebar -->
+    
   </aside>
