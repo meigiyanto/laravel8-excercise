@@ -5,7 +5,7 @@
 @section('content')
 <!-- Content Header (Page header) -->
 <div class="content-header">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row mb-2">
       <div class="col-sm-6">
         <h1 class="m-0">Penguna (One to One Relationship)</h1>
@@ -17,11 +17,11 @@
         </ol>
       </div><!-- /.col -->
     </div><!-- /.row -->
-  </div><!-- /.container-fluid -->
+  </div><!-- /.container -->
 </div>
 <!-- /.content-header -->
 
-<div class="container-fluid">
+<div class="container">
 	<div class="card">
 		<div class="card-body">
 			<table class="table table-bordered table-striped">

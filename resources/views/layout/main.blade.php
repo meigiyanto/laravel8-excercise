@@ -19,8 +19,13 @@
   <!-- AdminLTE App -->
   <script src="{{ asset('/assets/js/adminlte.min.js') }}"></script>
 </head>
-<body class="hold-transition sidebar-mini">
-<div class="wrapper">    
+<body class="hold-transition sidebar-mini sidebar-collapse layout-fixed">
+<div class="wrapper">
+    
+<!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+      <img class="animation__shake" src="{{ asset('/assets/images/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60" width="60">
+    </div>    
     @include('layout.section.navbar')
 
     @include('layout.section.sidebar')
