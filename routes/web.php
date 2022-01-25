@@ -45,9 +45,6 @@ Route::get('/notifikasi/sukses','NotificationController@sukses');
 Route::get('/notifikasi/peringatan','NotificationController@peringatan');
 Route::get('/notifikasi/gagal','NotificationController@gagal');
 
-Route::get('/kontol', 'KontolController@input');
-Route::post('/kontol/proses', 'KontolController@proses');
-
 Route::get('/pengguna', 'PenggunaController@index');
 Route::get('/article', 'ArticleController@index');
 Route::get('/anggota', 'AnggotaController@index');
@@ -56,3 +53,4 @@ Route::get('/student', 'StudentController@index');
 Route::get('/student/export_excel', 'StudentController@export_excel');
 Route::get('/student/import_excel', 'StudentController@import_excel');
 
+Route::resource('contacts', ContactController::class);
