@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Http\Request;
-namespace App\Http\Controllers\API;
-use App\Http\Controllers\Controller as Controller;
 
+namespace App\Http\Controllers\API;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller as Controller;
 
 class BaseController extends Controller
 {
@@ -22,7 +23,6 @@ class BaseController extends Controller
 
         return response()->json($response, 200);
     }
-
 
     /**
      * return error response.
