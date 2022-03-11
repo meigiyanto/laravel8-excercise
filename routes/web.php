@@ -21,25 +21,18 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index');
 
 Route::get('/employee', 'EmployeeController@index');
+Route::get('/employee/detail/{id}', 'EmployeeController@show');
 Route::get('/employee/fprint', 'EmployeeController@fprint');
 Route::get('/employee/create','EmployeeController@create');
 Route::get('/employee/search','EmployeeController@search');
 Route::get('/employee/edit/{id}','EmployeeController@edit');
-Route::get('/employee/destroy/{id}','EmployeeController@destroy');
+Route::post('/employee/destroy/{id}','EmployeeController@destroy');
 Route::post('/employee/store','EmployeeController@store');
 Route::post('/employee/update','EmployeeController@update');
 
-Route::get('/pegawai', 'PegawaiController@index');
-Route::get('/pegawai/create','PegawaiController@create');
-Route::get('/pegawai/edit/{id}','PegawaiController@edit');
-Route::get('/pegawai/search','PegawaiController@search');
-Route::get('/pegawai/destroy/{id}','PegawaiController@destroy');
-Route::post('/pegawai/store','PegawaiController@store');
-Route::post('/pegawai/update/{id}','PegawaiController@update');
-
-Route::get('/upload', 'UploadController@upload');
-Route::post('/upload/proses', 'UploadController@proses_upload');
-Route::get('/upload/hapus/{id}', 'UploadController@hapus');
+Route::get('/massupload', 'MultipleUploadController@upload');
+Route::post('/massupload/proses', 'MultipleUploadController@proses_upload');
+Route::get('/massupload/delete/{id}', 'MultipleUploadController@destroy');
 
 Route::get('/notifikasi','NotificationController@index');
 Route::get('/notifikasi/sukses','NotificationController@sukses');

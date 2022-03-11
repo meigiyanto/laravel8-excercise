@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGambarsTable extends Migration
+class CreateEmployeesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateGambarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('gambar', function (Blueprint $table) {
+        Schema::create('employees', function (Blueprint $table) {
 	        $table->increments('id');
-	        $table->string('name');
-	        $table->string('image_path');
-	        $table->text('keterangan');
+	        $table->string('fullname');
+	        $table->string('position');
+	        $table->smallInteger('age');
+	        $table->text('address');
 	        $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateGambarsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gambars');
+        Schema::dropIfExists('pegawais');
     }
 }

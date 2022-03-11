@@ -19,21 +19,21 @@
   <!-- AdminLTE App -->
   <script src="{{ asset('/assets/js/adminlte.min.js') }}"></script>
 </head>
-<body class="hold-transition sidebar-mini sidebar-collapse layout-fixed">
+<body class="hold-transition sidebar-mini sidebar-collapse layouts-fixed">
 <div class="wrapper">
-    
-<!-- Preloader -->
+
+		<!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
       <img class="animation__shake" src="{{ asset('/assets/images/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60" width="60">
-    </div>    
-    @include('layout.section.navbar')
+    </div>
+    @include('layouts.section.navbar')
 
-    @include('layout.section.sidebar')
-      
+    @include('layouts.section.sidebar')
+
     <div class="content-wrapper">
       @yield('content')
     </div>
-    @include('layout.section.footer')
+    @include('layouts.section.footer')
 
 </div>
 </body>

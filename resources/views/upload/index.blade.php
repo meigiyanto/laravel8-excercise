@@ -1,45 +1,43 @@
-@extends('layout.main')
+@extends('layouts.main')
 
-@section('title', 'Upload File')
+@section('title', 'Multiple Upload Image')
 
 @section('content')
 <style>
-	dl, ol, ul {
+	.text-block {
+	  position: absolute;
+	  bottom: 40px;
+	  right: 10px;
+	  background-color: black;
+	  color: white;
 		margin: 0;
-		padding: 0;
-		list-style: none;
+		padding: 10px 20px 0 20px;
 	}
-	.imgPreview img {
-		padding: 8px;
-		max-width: 160px;
-	} 
 </style>
 
 <div class="content-header">
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1 class="m-0">Multiple Upload File</h1>
+				<h1 class="m-0">Multiple Upload Image</h1>
 			</div>
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item">
 						<a href="#">Home</a>
 					</li>
-					<li class="breadcrumb-item active">Multiple Upload File</li>
+					<li class="breadcrumb-item active">Multiple Upload Image</li>
 				</ol>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="container">
+<div class="container-fluid">
 	<div class="card mb-3">
 		<div class="card-body">
 			<div class="row">
-				
-				<div class="col-lg-8 mx-auto">	
-		
+				<div class="col-lg-8 mx-auto">
 					<form action="/upload/proses" method="POST" enctype="multipart/form-data">
 						@csrf
 
@@ -50,63 +48,56 @@
 						@endif
 
 						@if (count($errors) > 0)
-							<div class="alert alert-danger">
-								<ul>
+							<div class="alert alert-danger">								<ul>
 									@foreach ($errors->all() as $error)
 									<li>{{ $error }}</li>
 									@endforeach
 								</ul>
 							</div>
 						@endif
-						
 						<div class="user-image mb-3 text-center">
-							<div class="imgPreview"> </div>
-						</div>   
-						
+							<div class="imgPreview"></div>
+						</div>
+
 						<div class="form-group custom-file">
 							<b>File Gambar</b><br/>
 							<input type="file" class="custom-file-input" name="images[]" id="images" multiple accept="image/*">
 							<label class="custom-file-label" for="images">Choose image</label>
 						</div>
-		
+
 						<div class="form-group">
-							<b>Keterangan</b>
-							<textarea class="form-control" name="keterangan"></textarea>
+							<b>Descriptions</b>
+							<textarea class="form-control" name="descriptions"></textarea>
 						</div>
-		
 						<input type="submit" value="Upload" class="btn btn-sm btn-primary">
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-		
+
 	<div class="card">
 		<div class="card-body">
-			<table class="table table-bordered table-striped">
-				<thead>
-					<tr>
-						<th class="text-center" width="20%">File</th>
-						<th>Keterangan</th>
-						<th class="text-center" width="10%">OPSI</th>
-					</tr>
-				</thead>
-				<tbody>
-				@php $i = $picture->currentPage() * $picture->perPage() - $picture->perPage() + 1; @endphp
+			@php $i = $picture->currentPage() * $picture->perPage() - $picture->perPage() + 1; @endphp
+			<div class="row">
 				@foreach($picture as $p)
-					<tr>
-						<td><img width="150px" src="{{ url('assets/images/'.$p->name) }}"></td>
-						<td class="align-middle">{{$p->keterangan}}</td>
-						<td class="align-middle"><a class="btn btn-sm btn-danger" href="/upload/hapus/{{ $p->id }}">HAPUS</a></td>
-					</tr>
+					<div class="col-md-4 my-3">
+						<div class="relative">
+			 				<img class="img-fluid" src="{{ url('assets/images/'.$p->name) }}">
+			 					@if($p->descriptions !== '')
+									<div class="text-block"><p>{{$p->descriptions}}</p></div>
+								@endif
+						</div>
+		 	 			<a class="btn btn-sm btn-danger mt-2" href="/upload/hapus/{{ $p->id }}">HAPUS</a>
+					</div>
 				@endforeach
-				</tbody>
-			</table>
-		
+			</div>
+
 			<p class="mt-3 float-right">Halaman : {{ $picture->currentPage() }} Jumlah Data : {{ $picture->total() }} Data Per Halaman : {{ $picture->perPage() }}</p>
-				
+
 			<p class="mt-2">{{ $picture->links() }}</p>
-		</div>
+			</div>
+ 		</div>
 	</div>
 </div>
 
@@ -127,12 +118,11 @@ $(function() {
 				reader.readAsDataURL(input.files[i]);
 			}
 		}
-
 	};
 
 	$('#images').on('change', function() {
 		multiImgPreview(this, 'div.imgPreview');
 	});
-});    
+});
 </script>
 @endsection
