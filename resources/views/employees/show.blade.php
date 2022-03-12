@@ -12,6 +12,7 @@
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="#">Home</a></li>
+					<li class="breadcrumb-item"><a href="employee">Employee</a></li>
 					<li class="breadcrumb-item active">Detail Employee</li>
 				</ol>
 			</div>
@@ -23,8 +24,8 @@
 	<div class="container-fluid">
 		<div class="card">
 			<div class="card-body">
-				<a class="mb-3 btn btn-sm btn-primary" href="/employee"> Back</a>
-				<a class="float-right mb-3 btn btn-sm btn-secondary" href="/employee/edit/{{ $employee->id }}">Edit</a>
+				<a class="mb-3 btn btn-sm btn-primary" href="/employees"> Back</a>
+				<a class="float-right mb-3 btn btn-sm btn-secondary" href="/employees/{{ $employee->id }}/edit">Edit</a>
 				<div class="row">
 					<div class="col-md-8">
 						<div class="table table-responsive">
@@ -57,7 +58,7 @@
 						</div>
 					</div>
 					<div class="col-md-4">
-			   		<img class="img-fluid" src="/assets/images/{{ $employee->picture }}">
+			   		<img style="width: 100%; height: auto;" src="{{ asset('storage/'.$employee->picture) }}">
 					</div>
 				</div>
 			</div>

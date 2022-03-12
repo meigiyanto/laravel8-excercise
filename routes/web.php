@@ -20,16 +20,6 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/employee', 'EmployeeController@index');
-Route::get('/employee/detail/{id}', 'EmployeeController@show');
-Route::get('/employee/fprint', 'EmployeeController@fprint');
-Route::get('/employee/create','EmployeeController@create');
-Route::get('/employee/search','EmployeeController@search');
-Route::get('/employee/edit/{id}','EmployeeController@edit');
-Route::post('/employee/destroy/{id}','EmployeeController@destroy');
-Route::post('/employee/store','EmployeeController@store');
-Route::post('/employee/update','EmployeeController@update');
-
 Route::get('/massupload', 'MultipleUploadController@upload');
 Route::post('/massupload/proses', 'MultipleUploadController@proses_upload');
 Route::get('/massupload/delete/{id}', 'MultipleUploadController@destroy');
@@ -49,3 +39,7 @@ Route::get('/student/export_excel', 'StudentController@export_excel');
 Route::get('/student/import_excel', 'StudentController@import_excel');
 
 Route::resource('contacts', ContactController::class);
+
+Route::get('/employees/fprint', 'EmployeeController@fprint');
+Route::get('/employees/search', 'EmployeeController@search');
+Route::resource('employees', EmployeeController::class);

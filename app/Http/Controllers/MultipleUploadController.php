@@ -20,6 +20,7 @@ class MultipleUploadController extends Controller
 			'images'   => 'required',
 			'images.*' => 'mimes:jpeg,jfif,jpg,png,gif,csv,txt,pdf|max:2048'
 		]);
+
 		$images = $request->file('images');
 		foreach($images as $image) {
 			$name = $image->getClientOriginalName();
